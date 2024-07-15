@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Syne } from "next/font/google";
 import "./globals.css";
+import { AOSInit } from "@/components/aos";
+import Navbar from "@/components/Navbar";
+import { Providers } from "./providers";
+import Footer from "@/components/Footer";
+import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const syne = Syne({ subsets: ["latin"], variable: "--font-syne" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <AOSInit />
+      <body className={cn("bg-[#121C23]", inter.variable, syne.variable)}>
+        <Navbar />
+        <Providers>{children}</Providers>
+        <Footer />
+      </body>
     </html>
   );
 }

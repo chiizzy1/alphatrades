@@ -2,32 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*,
+:after,
+:before {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --black: #0e0a09;
+  --green: #00a52c;
+  --yellow: #fcc019;
+  --grey: #adadad;
+  --white: #fff;
+  --lemon: #fcff6d;
+  --dark-text: #144049;
+  --transition: 0.5s;
+  --max-width: 1078px;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--white);
+  overflow-x: hidden;
+  font-family: var(--font-inter);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Bg gradients */
+.hero-gradient {
+  background: linear-gradient(180deg, #173b80 0%, #11573e 100%);
+  filter: blur(100px);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.customer-service-gradient {
+  background: linear-gradient(180deg, #82392c 0%, #d0a22c 100%);
+  filter: blur(150px);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.chart-gradient {
+  background: linear-gradient(180deg, #2c4982 0%, #2cd095 100%);
+  filter: blur(200px);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.invest-gradient {
+  background: linear-gradient(180deg, rgba(0, 194, 255, 0) 0%, #ff29c3 100%);
+  filter: blur(175px);
+}
+
+.footer-gradient {
+  background: linear-gradient(180deg, #2c4982 0%, #2cd095 100%);
+  filter: blur(200px);
+  transform: rotate(-90deg);
+}
+
+/* Input style */
+.wrapper {
+  position: relative;
+  width: 304px;
+  height: 54px;
+}
+
+.input {
+  background: none;
+  outline: none;
 }
