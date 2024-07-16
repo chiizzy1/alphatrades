@@ -30,7 +30,7 @@ const CustomerService: FC<CustomerServiceProps> = ({}) => {
         </div>
 
         {/* bg-gradient */}
-        <div className="absolute w-[962px] h-[471px] customer-service-gradient -top-[50px] -left-[600px] -z-[2] rounded-full" />
+        <div className="absolute w-[400px] h-[471px] customer-service-gradient -top-[50px] -left-[10px] -z-[2] rounded-full" />
       </div>
     </section>
   );
